@@ -94,7 +94,7 @@ app.controller('genrelistController', ['$scope', '$resource', function($scope, $
       });
     });
 
-    if ($scope.selectedCurrency.length = 1) {
+    if ($scope.selectedCurrency != null && $scope.selectedCurrency.length == 1) {
       angular.forEach($scope.allCurrencies, function(currency) {
         if (currency.id == $scope.selectedCurrency[0]) {
           $scope.currencyToPatch = {id:currency.id,name:currency.name,alphabetic_code:"alphabetic_code"};
