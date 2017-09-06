@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Website CSS style -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Website Font style -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+  <title>Admin</title>
+</head>
+<body>
+<div class="container">
+  <div class="row main">
+    <div class="main-login main-center">
+      <h3>Edit your opportunity</h3>
+
+      <form class="" method="post" action="#">
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Title</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" maxlength="100" class="form-control" name="name" id="name" placeholder="Enter title"
+                     ng-model="opportunity.title"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="cols-sm-2 control-label">Description</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="email" id="email" placeholder="Enter Description"
+                     ng-model="opportunity.description"/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="email" class="cols-sm-2 control-label">Backgrounds</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+
+              <div class="demo-section k-content">
+                <select kendo-multi-select k-options="selectBackgroundOptions"
+                        k-ng-model="selectedBackgrounds"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="cols-sm-2 control-label">Skills</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+
+              <div class="demo-section k-content">
+                <select kendo-multi-select k-options="selectSkillOptions" k-ng-model="selectedSkills"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6" style="padding-left: 0px;">
+          <label class="cols-sm-2 control-label">Salary</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="confirm" id="salary" placeholder="Enter salary"
+                     ng-model="opportunity.specifics_info.salary"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" style="padding-right: 0px;margin-top:7px;">
+          <label class="cols-sm-12 control-label">Salary currency</label>
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+
+              <div class="demo-section k-content">
+                <select kendo-multi-select k-options="selectCurrencyOptions" k-ng-model="selectedCurrency"></select>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6" style="padding-left: 0px;">
+          <label class="cols-sm-2 control-label">Earliest Start Date</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" id="earliest_start_date" placeholder="earliest start date"
+                     ng-model="opportunity.earliest_start_date"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6" style="padding-right: 0px;">
+          <label class="cols-sm-2 control-label">Salary Periodicity</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="confirm" id="salary_periodicity"
+                     placeholder="Enter salary periodicity" ng-model="opportunity.specifics_info.salary_periodicity"/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group col-sm-6" style="padding-left: 0px;">
+          <label class="cols-sm-2 control-label">Latest End date</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" id="latest_end_date" placeholder="Latest End date"
+                     ng-model="opportunity.latest_end_date"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6" style="padding-right: 0px;">
+          <label class="cols-sm-2 control-label">Application Close Date</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" id="applications_close_date" placeholder="Application Close date"
+                     ng-model="opportunity.applications_close_date"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="selection_process" class="cols-sm-2 control-label">Selection Process</label>
+
+          <div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></span>
+              <textarea class="form-control" name="confirm" id="selection_process" style="height: 100px !important;"
+                        placeholder="Enter Selection process"
+                        ng-model="opportunity.role_info.selection_process"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <button href="http://deepak646.blogspot.in" target="_blank" type="button" id="button"
+                  class="btn btn-primary btn-lg btn-block login-button" ng-click="callPatch()">Register
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
